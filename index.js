@@ -36,6 +36,8 @@ function actionApplyer(int, arr){
       return int;
   } else {
       let currentInt = int;
+
+      // arr[i] is a function
       for (let i = 0; i < arr.length; i++){
           currentInt = arr[i](currentInt);
       }
