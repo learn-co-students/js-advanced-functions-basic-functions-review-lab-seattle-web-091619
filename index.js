@@ -39,16 +39,12 @@ let Calculator  = {add: function add(num1, num2){
   //   ]
   //   expect(actionApplyer(13, arrayOfTransforms)).to.equal(4, message)
   // })
-function actionApplyer(num, arr=[]){
+function actionApplyer(num, arr){
   let number = num
-  if (arr.length === 0){
-      return num
+  if (arr.length !== 0){
+    for (const element of arr){
+      number = element(number)
+    }
   }
-  else{
-    let total = 0
-    arr.forEach(function(i){
-      i(number)
-    })
-      return [num, message]
-  }
+      return number
 }
